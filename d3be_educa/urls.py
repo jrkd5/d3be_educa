@@ -1,3 +1,5 @@
+from django.contrib.auth import views as auth_views
+
 """d3be_educa URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -17,5 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('admin/', admin.site.urls),
 ]
